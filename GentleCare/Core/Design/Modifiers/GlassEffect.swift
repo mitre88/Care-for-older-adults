@@ -135,7 +135,7 @@ struct GlassContainer<Content: View>: View {
 
 // MARK: - Preview
 
-#Preview {
+#Preview("GlassEffect Styles") {
     ZStack {
         // Background gradient
         LinearGradient(

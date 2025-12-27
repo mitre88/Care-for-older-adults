@@ -229,7 +229,7 @@ struct StatCard: View {
 
 // MARK: - Preview
 
-#Preview {
+#Preview("GlassCard Components") {
     ZStack {
         Color(hex: "1C1C1E")
             .ignoresSafeArea()

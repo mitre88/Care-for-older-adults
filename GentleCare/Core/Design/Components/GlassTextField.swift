@@ -304,7 +304,7 @@ struct GlassDatePicker: View {
 
 // MARK: - Preview
 
-#Preview {
+#Preview("GlassTextField Components") {
     ZStack {
         Color(hex: "1C1C1E")
             .ignoresSafeArea()
