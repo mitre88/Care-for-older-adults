@@ -18,18 +18,15 @@ struct AddAppointmentView: View {
 
     // MARK: - State
 
+    @State private var title = ""
     @State private var doctorName = ""
-    @State private var specialty: MedicalSpecialty = .generalMedicine
+    @State private var specialty: MedicalSpecialty = .generalPractitioner
     @State private var location = ""
-    @State private var dateTime = Date().addingTimeInterval(86400) // Tomorrow
+    @State private var appointmentDate = Date().addingTimeInterval(86400)
     @State private var notes = ""
     @State private var preparationInstructions = ""
-    @State private var enableReminder = true
-    @State private var reminderMinutes = 60
 
     @State private var currentStep = 0
-
-    private let reminderOptions = [15, 30, 60, 120, 1440] // minutes
 
     // MARK: - Body
 
@@ -103,6 +100,14 @@ struct AddAppointmentView: View {
                 }
                 .padding(.top, GentleCareTheme.Spacing.xl)
 
+                // Title
+                GlassTextField(
+                    "Titulo de la cita",
+                    placeholder: "Ej: Control anual",
+                    text: $title,
+                    icon: "calendar"
+                )
+
                 // Doctor name
                 GlassTextField(
                     "Nombre del doctor",
@@ -121,8 +126,8 @@ struct AddAppointmentView: View {
                         GridItem(.flexible()),
                         GridItem(.flexible())
                     ], spacing: 8) {
-                        ForEach(MedicalSpecialty.allCases, id: \.self) { spec in
-                            SpecialtyChip(
+                        ForEach(MedicalSpecialty.allCases.prefix(10), id: \.self) { spec in
+                            AppointmentSpecialtyChip(
                                 specialty: spec,
                                 isSelected: specialty == spec
                             ) {
@@ -170,49 +175,13 @@ struct AddAppointmentView: View {
                 GlassCard(size: .large) {
                     DatePicker(
                         "Fecha y hora",
-                        selection: $dateTime,
+                        selection: $appointmentDate,
                         in: Date()...,
                         displayedComponents: [.date, .hourAndMinute]
                     )
                     .datePickerStyle(.graphical)
                     .tint(Color(hex: "4A90D9"))
                     .colorScheme(.dark)
-                }
-
-                // Reminder toggle
-                GlassCard(size: .small) {
-                    Toggle(isOn: $enableReminder) {
-                        HStack {
-                            Image(systemName: "bell.fill")
-                                .foregroundStyle(Color(hex: "FF9500"))
-
-                            Text("Recordatorio")
-                                .font(GCTypography.bodyLarge)
-                                .foregroundStyle(.white)
-                        }
-                    }
-                    .tint(Color(hex: "4A90D9"))
-                }
-
-                // Reminder time selector
-                if enableReminder {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Recordar antes")
-                            .font(GCTypography.labelMedium)
-                            .foregroundStyle(.white.opacity(0.8))
-
-                        HStack(spacing: 8) {
-                            ForEach(reminderOptions, id: \.self) { minutes in
-                                ReminderChip(
-                                    minutes: minutes,
-                                    isSelected: reminderMinutes == minutes
-                                ) {
-                                    reminderMinutes = minutes
-                                    GCHaptic.selection.trigger()
-                                }
-                            }
-                        }
-                    }
                 }
             }
             .padding()
@@ -268,15 +237,12 @@ struct AddAppointmentView: View {
                         Divider()
                             .background(Color.white.opacity(0.2))
 
-                        SummaryRow(icon: "person.fill", label: "Doctor", value: doctorName.isEmpty ? "-" : doctorName)
-                        SummaryRow(icon: "stethoscope", label: "Especialidad", value: specialty.rawValue)
-                        SummaryRow(icon: "mappin", label: "Ubicacion", value: location.isEmpty ? "-" : location)
-                        SummaryRow(icon: "calendar", label: "Fecha", value: formattedDate)
-                        SummaryRow(icon: "clock", label: "Hora", value: formattedTime)
-
-                        if enableReminder {
-                            SummaryRow(icon: "bell.fill", label: "Recordatorio", value: reminderText)
-                        }
+                        AppointmentSummaryRow(icon: "calendar", label: "Titulo", value: title.isEmpty ? "-" : title)
+                        AppointmentSummaryRow(icon: "person.fill", label: "Doctor", value: doctorName.isEmpty ? "-" : doctorName)
+                        AppointmentSummaryRow(icon: "stethoscope", label: "Especialidad", value: specialty.rawValue)
+                        AppointmentSummaryRow(icon: "mappin", label: "Ubicacion", value: location.isEmpty ? "-" : location)
+                        AppointmentSummaryRow(icon: "calendar", label: "Fecha", value: formattedDate)
+                        AppointmentSummaryRow(icon: "clock", label: "Hora", value: formattedTime)
                     }
                 }
 
@@ -349,41 +315,32 @@ struct AddAppointmentView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "d 'de' MMMM, yyyy"
         formatter.locale = Locale(identifier: "es_ES")
-        return formatter.string(from: dateTime)
+        return formatter.string(from: appointmentDate)
     }
 
     private var formattedTime: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        return formatter.string(from: dateTime)
-    }
-
-    private var reminderText: String {
-        switch reminderMinutes {
-        case 15: return "15 minutos antes"
-        case 30: return "30 minutos antes"
-        case 60: return "1 hora antes"
-        case 120: return "2 horas antes"
-        case 1440: return "1 dia antes"
-        default: return "\(reminderMinutes) minutos antes"
-        }
+        return formatter.string(from: appointmentDate)
     }
 
     // MARK: - Actions
 
     private func saveAppointment() {
         let appointment = MedicalAppointment(
+            title: title.isEmpty ? specialty.rawValue : title,
             doctorName: doctorName,
             specialty: specialty,
             location: location,
-            dateTime: dateTime,
-            notes: notes.isEmpty ? nil : notes,
-            preparationInstructions: preparationInstructions.isEmpty ? nil : preparationInstructions,
+            appointmentDate: appointmentDate,
             profile: profiles.first
         )
 
-        if enableReminder {
-            appointment.reminderMinutesBefore = reminderMinutes
+        if !notes.isEmpty {
+            appointment.notes = notes
+        }
+        if !preparationInstructions.isEmpty {
+            appointment.preparationInstructions = preparationInstructions
         }
 
         modelContext.insert(appointment)
@@ -398,9 +355,9 @@ struct AddAppointmentView: View {
     }
 }
 
-// MARK: - Specialty Chip
+// MARK: - Appointment Specialty Chip
 
-struct SpecialtyChip: View {
+struct AppointmentSpecialtyChip: View {
     let specialty: MedicalSpecialty
     let isSelected: Bool
     let action: () -> Void
@@ -411,7 +368,7 @@ struct SpecialtyChip: View {
                 Image(systemName: specialty.icon)
                     .font(.system(size: 16))
 
-                Text(specialty.rawValue)
+                Text(shortName)
                     .font(GCTypography.labelSmall)
                     .lineLimit(1)
             }
@@ -426,58 +383,40 @@ struct SpecialtyChip: View {
         }
     }
 
+    private var shortName: String {
+        switch specialty {
+        case .generalPractitioner: return "General"
+        case .cardiologist: return "Cardio"
+        case .neurologist: return "Neuro"
+        case .orthopedist: return "Trauma"
+        case .dermatologist: return "Dermato"
+        case .ophthalmologist: return "Oftalmo"
+        case .geriatrician: return "Geriatria"
+        case .psychiatrist: return "Psiquiat"
+        case .endocrinologist: return "Endocri"
+        default: return "Otro"
+        }
+    }
+
     private var specialtyColor: Color {
         switch specialty {
-        case .generalMedicine: return Color(hex: "4A90D9")
-        case .cardiology: return Color(hex: "FF6B6B")
-        case .neurology: return Color(hex: "AF52DE")
-        case .orthopedics: return Color(hex: "FF9500")
-        case .ophthalmology: return Color(hex: "5AC8FA")
-        case .dermatology: return Color(hex: "E8846B")
-        case .geriatrics: return Color(hex: "5BB381")
-        case .psychiatry: return Color(hex: "BF5AF2")
-        case .endocrinology: return Color(hex: "FFB340")
-        case .other: return Color(hex: "8E8E93")
+        case .generalPractitioner: return Color(hex: "4A90D9")
+        case .cardiologist: return Color(hex: "FF6B6B")
+        case .neurologist: return Color(hex: "AF52DE")
+        case .orthopedist: return Color(hex: "FF9500")
+        case .ophthalmologist: return Color(hex: "5AC8FA")
+        case .dermatologist: return Color(hex: "E8846B")
+        case .geriatrician: return Color(hex: "5BB381")
+        case .psychiatrist: return Color(hex: "BF5AF2")
+        case .endocrinologist: return Color(hex: "FFB340")
+        default: return Color(hex: "8E8E93")
         }
     }
 }
 
-// MARK: - Reminder Chip
+// MARK: - Appointment Summary Row
 
-struct ReminderChip: View {
-    let minutes: Int
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text(label)
-                .font(GCTypography.labelSmall)
-                .foregroundStyle(isSelected ? .white : .white.opacity(0.6))
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                .background {
-                    Capsule()
-                        .fill(isSelected ? Color(hex: "FF9500") : Color.white.opacity(0.1))
-                }
-        }
-    }
-
-    private var label: String {
-        switch minutes {
-        case 15: return "15 min"
-        case 30: return "30 min"
-        case 60: return "1 hora"
-        case 120: return "2 horas"
-        case 1440: return "1 dia"
-        default: return "\(minutes) min"
-        }
-    }
-}
-
-// MARK: - Summary Row
-
-struct SummaryRow: View {
+struct AppointmentSummaryRow: View {
     let icon: String
     let label: String
     let value: String
@@ -504,7 +443,7 @@ struct SummaryRow: View {
 
 // MARK: - Preview
 
-#Preview {
+#Preview("Add Appointment") {
     AddAppointmentView()
         .modelContainer(try! ModelContainer.createPreview())
 }

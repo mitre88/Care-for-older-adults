@@ -476,14 +476,6 @@ struct AddMedicationView: View {
         }
     }
 
-    // MARK: - Helpers
-
-    private static func createDefaultTime(hour: Int) -> Date {
-        var components = DateComponents()
-        components.hour = hour
-        components.minute = 0
-        return Calendar.current.date(from: components) ?? Date()
-    }
 }
 
 private func createDefaultTime(hour: Int) -> Date {

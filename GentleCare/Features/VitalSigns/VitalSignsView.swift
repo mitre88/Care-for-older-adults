@@ -137,7 +137,7 @@ struct VitalSignsView: View {
                         )
                         .foregroundStyle(statusColor(for: vital))
                     }
-                    .chartYScale(domain: selectedType?.minValue ?? 0 ... selectedType?.maxValue ?? 100)
+                    .chartYScale(domain: (selectedType?.minValue ?? 0)...(selectedType?.maxValue ?? 100))
                     .chartXAxis {
                         AxisMarks(values: .automatic(desiredCount: 5)) { value in
                             AxisValueLabel(format: .dateTime.day().month())

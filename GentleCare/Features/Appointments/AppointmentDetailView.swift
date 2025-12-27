@@ -51,7 +51,7 @@ struct AppointmentDetailView: View {
                         }
 
                         // Actions
-                        if appointment.status == .scheduled || appointment.status == .confirmed {
+                        if appointment.status == .scheduled {
                             actionsSection
                         }
 
@@ -119,52 +119,55 @@ struct AppointmentDetailView: View {
                     .font(GCTypography.bodyLarge)
                     .foregroundStyle(specialtyColor)
 
-                statusBadge
+                appointmentStatusBadge
             }
         }
         .padding(.vertical)
     }
 
     @ViewBuilder
-    private var statusBadge: some View {
+    private var appointmentStatusBadge: some View {
         HStack(spacing: 6) {
-            Image(systemName: statusIcon)
-            Text(statusText)
+            Image(systemName: appointmentStatusIcon)
+            Text(appointmentStatusText)
         }
         .font(GCTypography.labelMedium)
-        .foregroundStyle(statusColor)
+        .foregroundStyle(appointmentStatusColor)
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
         .background {
             Capsule()
-                .fill(statusColor.opacity(0.2))
+                .fill(appointmentStatusColor.opacity(0.2))
         }
     }
 
-    private var statusIcon: String {
+    private var appointmentStatusIcon: String {
         switch appointment.status {
         case .scheduled: return "clock"
-        case .confirmed: return "checkmark.circle"
         case .completed: return "checkmark.seal.fill"
         case .cancelled: return "xmark.circle"
+        case .rescheduled: return "arrow.triangle.2.circlepath"
+        case .noShow: return "person.fill.xmark"
         }
     }
 
-    private var statusText: String {
+    private var appointmentStatusText: String {
         switch appointment.status {
         case .scheduled: return "Programada"
-        case .confirmed: return "Confirmada"
         case .completed: return "Completada"
         case .cancelled: return "Cancelada"
+        case .rescheduled: return "Reprogramada"
+        case .noShow: return "No asistio"
         }
     }
 
-    private var statusColor: Color {
+    private var appointmentStatusColor: Color {
         switch appointment.status {
         case .scheduled: return Color(hex: "FF9500")
-        case .confirmed: return Color(hex: "34C759")
-        case .completed: return Color(hex: "5AC8FA")
+        case .completed: return Color(hex: "34C759")
         case .cancelled: return Color(hex: "FF6B6B")
+        case .rescheduled: return Color(hex: "5AC8FA")
+        case .noShow: return Color(hex: "8E8E93")
         }
     }
 
@@ -174,7 +177,7 @@ struct AppointmentDetailView: View {
         GlassCard(size: .large) {
             VStack(spacing: 16) {
                 // Date
-                DetailRow(
+                AppointmentDetailRow(
                     icon: "calendar",
                     iconColor: Color(hex: "4A90D9"),
                     title: "Fecha",
@@ -185,7 +188,7 @@ struct AppointmentDetailView: View {
                     .background(Color.white.opacity(0.1))
 
                 // Time
-                DetailRow(
+                AppointmentDetailRow(
                     icon: "clock.fill",
                     iconColor: Color(hex: "FF9500"),
                     title: "Hora",
@@ -196,7 +199,7 @@ struct AppointmentDetailView: View {
                     .background(Color.white.opacity(0.1))
 
                 // Location
-                DetailRow(
+                AppointmentDetailRow(
                     icon: "mappin.circle.fill",
                     iconColor: Color(hex: "FF6B6B"),
                     title: "Ubicacion",
@@ -204,11 +207,11 @@ struct AppointmentDetailView: View {
                 )
 
                 // Time until appointment
-                if appointment.status != .completed && appointment.status != .cancelled {
+                if appointment.status == .scheduled {
                     Divider()
                         .background(Color.white.opacity(0.1))
 
-                    DetailRow(
+                    AppointmentDetailRow(
                         icon: "hourglass",
                         iconColor: Color(hex: "5BB381"),
                         title: "Tiempo restante",
@@ -268,17 +271,16 @@ struct AppointmentDetailView: View {
             // Quick actions
             HStack(spacing: 12) {
                 // Add to calendar
-                ActionButton(
+                AppointmentActionButton(
                     icon: "calendar.badge.plus",
                     title: "Calendario",
                     color: Color(hex: "4A90D9")
                 ) {
-                    // Add to calendar action
                     GCHaptic.medium.trigger()
                 }
 
                 // Get directions
-                ActionButton(
+                AppointmentActionButton(
                     icon: "map.fill",
                     title: "Direcciones",
                     color: Color(hex: "5BB381")
@@ -287,12 +289,11 @@ struct AppointmentDetailView: View {
                 }
 
                 // Call
-                ActionButton(
+                AppointmentActionButton(
                     icon: "phone.fill",
                     title: "Llamar",
                     color: Color(hex: "34C759")
                 ) {
-                    // Call action - would need phone number
                     GCHaptic.medium.trigger()
                 }
             }
@@ -322,16 +323,16 @@ struct AppointmentDetailView: View {
 
     private var specialtyColor: Color {
         switch appointment.specialty {
-        case .generalMedicine: return Color(hex: "4A90D9")
-        case .cardiology: return Color(hex: "FF6B6B")
-        case .neurology: return Color(hex: "AF52DE")
-        case .orthopedics: return Color(hex: "FF9500")
-        case .ophthalmology: return Color(hex: "5AC8FA")
-        case .dermatology: return Color(hex: "E8846B")
-        case .geriatrics: return Color(hex: "5BB381")
-        case .psychiatry: return Color(hex: "BF5AF2")
-        case .endocrinology: return Color(hex: "FFB340")
-        case .other: return Color(hex: "8E8E93")
+        case .generalPractitioner: return Color(hex: "4A90D9")
+        case .cardiologist: return Color(hex: "FF6B6B")
+        case .neurologist: return Color(hex: "AF52DE")
+        case .orthopedist: return Color(hex: "FF9500")
+        case .ophthalmologist: return Color(hex: "5AC8FA")
+        case .dermatologist: return Color(hex: "E8846B")
+        case .geriatrician: return Color(hex: "5BB381")
+        case .psychiatrist: return Color(hex: "BF5AF2")
+        case .endocrinologist: return Color(hex: "FFB340")
+        default: return Color(hex: "8E8E93")
         }
     }
 
@@ -339,18 +340,18 @@ struct AppointmentDetailView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, d 'de' MMMM yyyy"
         formatter.locale = Locale(identifier: "es_ES")
-        return formatter.string(from: appointment.dateTime).capitalized
+        return formatter.string(from: appointment.appointmentDate).capitalized
     }
 
     private var formattedTime: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        return formatter.string(from: appointment.dateTime)
+        return formatter.string(from: appointment.appointmentDate)
     }
 
     private var timeUntilAppointment: String {
         let now = Date()
-        let interval = appointment.dateTime.timeIntervalSince(now)
+        let interval = appointment.appointmentDate.timeIntervalSince(now)
 
         if interval < 0 {
             return "Pasada"
@@ -394,9 +395,9 @@ struct AppointmentDetailView: View {
     }
 }
 
-// MARK: - Detail Row
+// MARK: - Appointment Detail Row
 
-struct DetailRow: View {
+struct AppointmentDetailRow: View {
     let icon: String
     let iconColor: Color
     let title: String
@@ -424,9 +425,9 @@ struct DetailRow: View {
     }
 }
 
-// MARK: - Action Button
+// MARK: - Appointment Action Button
 
-struct ActionButton: View {
+struct AppointmentActionButton: View {
     let icon: String
     let title: String
     let color: Color
@@ -452,18 +453,19 @@ struct ActionButton: View {
 
 // MARK: - Preview
 
-#Preview {
+#Preview("Appointment Detail") {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: MedicalAppointment.self, configurations: config)
 
     let appointment = MedicalAppointment(
+        title: "Control cardiologico",
         doctorName: "Dr. Maria Garcia",
-        specialty: .cardiology,
+        specialty: .cardiologist,
         location: "Hospital Central, Consultorio 305",
-        dateTime: Date().addingTimeInterval(86400),
-        notes: "Llevar resultados de laboratorio",
-        preparationInstructions: "Ayuno de 8 horas antes de la cita"
+        appointmentDate: Date().addingTimeInterval(86400)
     )
+    appointment.notes = "Llevar resultados de laboratorio"
+    appointment.preparationInstructions = "Ayuno de 8 horas antes de la cita"
 
     return AppointmentDetailView(appointment: appointment)
         .modelContainer(container)

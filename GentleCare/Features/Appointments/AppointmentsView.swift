@@ -13,12 +13,12 @@ struct AppointmentsView: View {
     // MARK: - Environment
 
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \MedicalAppointment.dateTime) private var appointments: [MedicalAppointment]
+    @Query(sort: \MedicalAppointment.appointmentDate) private var appointments: [MedicalAppointment]
 
     // MARK: - State
 
     @State private var showingAddAppointment = false
-    @State private var selectedFilter: AppointmentFilter = .upcoming
+    @State private var selectedFilter: AppointmentFilterType = .upcoming
     @State private var selectedAppointment: MedicalAppointment?
 
     // MARK: - Body
@@ -63,8 +63,8 @@ struct AppointmentsView: View {
     private var filterTabs: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(AppointmentFilter.allCases, id: \.self) { filter in
-                    FilterChip(
+                ForEach(AppointmentFilterType.allCases, id: \.self) { filter in
+                    AppointmentFilterChip(
                         title: filter.title,
                         isSelected: selectedFilter == filter,
                         count: count(for: filter)
@@ -149,9 +149,9 @@ struct AppointmentsView: View {
         let now = Date()
         switch selectedFilter {
         case .upcoming:
-            return appointments.filter { $0.dateTime >= now && $0.status != .cancelled }
+            return appointments.filter { $0.appointmentDate >= now && $0.status != .cancelled }
         case .past:
-            return appointments.filter { $0.dateTime < now || $0.status == .completed }
+            return appointments.filter { $0.appointmentDate < now || $0.status == .completed }
         case .all:
             return appointments
         }
@@ -159,17 +159,17 @@ struct AppointmentsView: View {
 
     private var groupedAppointments: [Date: [MedicalAppointment]] {
         Dictionary(grouping: filteredAppointments) { appointment in
-            Calendar.current.startOfDay(for: appointment.dateTime)
+            Calendar.current.startOfDay(for: appointment.appointmentDate)
         }
     }
 
-    private func count(for filter: AppointmentFilter) -> Int {
+    private func count(for filter: AppointmentFilterType) -> Int {
         let now = Date()
         switch filter {
         case .upcoming:
-            return appointments.filter { $0.dateTime >= now && $0.status != .cancelled }.count
+            return appointments.filter { $0.appointmentDate >= now && $0.status != .cancelled }.count
         case .past:
-            return appointments.filter { $0.dateTime < now || $0.status == .completed }.count
+            return appointments.filter { $0.appointmentDate < now || $0.status == .completed }.count
         case .all:
             return appointments.count
         }
@@ -190,9 +190,9 @@ struct AppointmentsView: View {
     }
 }
 
-// MARK: - Appointment Filter
+// MARK: - Appointment Filter Type
 
-enum AppointmentFilter: CaseIterable {
+enum AppointmentFilterType: CaseIterable {
     case upcoming
     case past
     case all
@@ -206,9 +206,9 @@ enum AppointmentFilter: CaseIterable {
     }
 }
 
-// MARK: - Filter Chip
+// MARK: - Appointment Filter Chip
 
-struct FilterChip: View {
+struct AppointmentFilterChip: View {
     let title: String
     let isSelected: Bool
     let count: Int
@@ -311,28 +311,28 @@ struct AppointmentCard: View {
     private var formattedTime: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        return formatter.string(from: appointment.dateTime)
+        return formatter.string(from: appointment.appointmentDate)
     }
 
     private var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM"
         formatter.locale = Locale(identifier: "es_ES")
-        return formatter.string(from: appointment.dateTime)
+        return formatter.string(from: appointment.appointmentDate)
     }
 
     private var specialtyColor: Color {
         switch appointment.specialty {
-        case .generalMedicine: return Color(hex: "4A90D9")
-        case .cardiology: return Color(hex: "FF6B6B")
-        case .neurology: return Color(hex: "AF52DE")
-        case .orthopedics: return Color(hex: "FF9500")
-        case .ophthalmology: return Color(hex: "5AC8FA")
-        case .dermatology: return Color(hex: "E8846B")
-        case .geriatrics: return Color(hex: "5BB381")
-        case .psychiatry: return Color(hex: "BF5AF2")
-        case .endocrinology: return Color(hex: "FFB340")
-        case .other: return Color(hex: "8E8E93")
+        case .generalPractitioner: return Color(hex: "4A90D9")
+        case .cardiologist: return Color(hex: "FF6B6B")
+        case .neurologist: return Color(hex: "AF52DE")
+        case .orthopedist: return Color(hex: "FF9500")
+        case .ophthalmologist: return Color(hex: "5AC8FA")
+        case .dermatologist: return Color(hex: "E8846B")
+        case .geriatrician: return Color(hex: "5BB381")
+        case .psychiatrist: return Color(hex: "BF5AF2")
+        case .endocrinologist: return Color(hex: "FFB340")
+        default: return Color(hex: "8E8E93")
         }
     }
 
@@ -341,22 +341,25 @@ struct AppointmentCard: View {
         switch appointment.status {
         case .scheduled:
             EmptyView()
-        case .confirmed:
+        case .completed:
             Image(systemName: "checkmark.circle.fill")
                 .foregroundStyle(Color(hex: "34C759"))
-        case .completed:
-            Image(systemName: "checkmark.seal.fill")
-                .foregroundStyle(Color(hex: "5AC8FA"))
         case .cancelled:
             Image(systemName: "xmark.circle.fill")
                 .foregroundStyle(Color(hex: "FF6B6B"))
+        case .rescheduled:
+            Image(systemName: "arrow.triangle.2.circlepath")
+                .foregroundStyle(Color(hex: "FFB340"))
+        case .noShow:
+            Image(systemName: "person.fill.xmark")
+                .foregroundStyle(Color(hex: "8E8E93"))
         }
     }
 }
 
 // MARK: - Preview
 
-#Preview {
+#Preview("Appointments View") {
     NavigationStack {
         AppointmentsView()
     }

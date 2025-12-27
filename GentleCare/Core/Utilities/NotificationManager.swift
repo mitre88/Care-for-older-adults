@@ -77,9 +77,9 @@ class NotificationManager: ObservableObject {
             // Create trigger based on time
             var components = Calendar.current.dateComponents([.hour, .minute], from: time)
 
-            // Set to repeat daily based on frequency
+            // Set to repeat based on frequency
             switch medication.frequency {
-            case .daily:
+            case .onceDaily, .twiceDaily, .threeTimesDaily, .fourTimesDaily:
                 let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
                 let request = UNNotificationRequest(
                     identifier: "\(medication.id.uuidString)-\(index)",
@@ -88,7 +88,8 @@ class NotificationManager: ObservableObject {
                 )
                 try? await center.add(request)
 
-            case .twiceDaily, .threeTimesDaily:
+            case .everyOtherDay:
+                // For every other day, we use a different approach
                 let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
                 let request = UNNotificationRequest(
                     identifier: "\(medication.id.uuidString)-\(index)",
@@ -107,8 +108,8 @@ class NotificationManager: ObservableObject {
                 )
                 try? await center.add(request)
 
-            case .asNeeded:
-                // No scheduled notifications for as-needed medications
+            case .asNeeded, .custom:
+                // No scheduled notifications for as-needed or custom medications
                 break
             }
         }
@@ -159,9 +160,9 @@ class NotificationManager: ObservableObject {
             "type": "appointment"
         ]
 
-        // Schedule reminder before appointment
-        let reminderMinutes = appointment.reminderMinutesBefore ?? 60
-        let reminderDate = appointment.dateTime.addingTimeInterval(-Double(reminderMinutes * 60))
+        // Schedule reminder 60 minutes before appointment
+        let reminderMinutes = 60
+        let reminderDate = appointment.appointmentDate.addingTimeInterval(-Double(reminderMinutes * 60))
 
         guard reminderDate > Date() else { return }
 

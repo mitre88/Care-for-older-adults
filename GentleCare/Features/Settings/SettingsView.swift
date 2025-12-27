@@ -191,9 +191,10 @@ struct SettingsView: View {
 
     // MARK: - Settings Group
 
+    @ViewBuilder
     private func settingsGroup<Content: View>(
         title: String,
-        @ViewBuilder content: () -> Content
+        @ViewBuilder content: @escaping () -> Content
     ) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
@@ -201,11 +202,7 @@ struct SettingsView: View {
                 .foregroundStyle(.white.opacity(0.6))
                 .padding(.horizontal, 4)
 
-            GlassCard(size: .medium) {
-                VStack(spacing: 0) {
-                    content()
-                }
-            }
+            GlassCard(size: .medium, content: content)
         }
     }
 }

@@ -233,6 +233,7 @@ enum QueryType {
 
 // MARK: - Network Monitor
 
+@MainActor
 class NetworkMonitor: ObservableObject {
     @Published var isConnected = true
 
@@ -244,6 +245,7 @@ class NetworkMonitor: ObservableObject {
 
 // MARK: - Apple Intelligence Service
 
+@MainActor
 class AppleIntelligenceService {
 
     func process(query: String, profile: ElderlyProfile?) async -> String {
@@ -320,6 +322,7 @@ class AppleIntelligenceService {
 
 // MARK: - OpenAI Service
 
+@MainActor
 class OpenAIService {
 
     private let baseURL = "https://api.openai.com/v1/chat/completions"
