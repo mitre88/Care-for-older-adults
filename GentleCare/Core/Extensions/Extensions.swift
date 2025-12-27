@@ -203,7 +203,6 @@ extension Bundle {
 extension UserDefaults {
     enum Keys {
         static let hasCompletedOnboarding = "hasCompletedOnboarding"
-        static let preferredAIMode = "preferredAIMode"
         static let prefersDarkMode = "prefersDarkMode"
         static let textSizeMultiplier = "textSizeMultiplier"
         static let enableVoiceFeedback = "enableVoiceFeedback"

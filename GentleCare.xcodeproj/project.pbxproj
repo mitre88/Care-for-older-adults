@@ -15,7 +15,6 @@
 		2F6E923CCE1735E594B5C76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7FC73F07ED67BB4007BBE9 /* Assets.xcassets */; };
 		3000CB96A75F3DFD520B90DA /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095E70D2EC06ECE274DF9769 /* EmergencyView.swift */; };
 		347E3E2C8F4F7E3174855AF2 /* VitalSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEAC2DB1952B590D1A0674A /* VitalSign.swift */; };
-		3A66FEF62F301D1E5D370DF8 /* HybridAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833276E2A1887EA17A330B3 /* HybridAIService.swift */; };
 		3FEAAE6CC34ADEB664034E3D /* GlassEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F600D276C138A301A2EAB8D /* GlassEffect.swift */; };
 		5818A7B9165189EA4F971F98 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F5071AEC1456C886EA8C2 /* GlassCard.swift */; };
 		596CEE0501C77E58015EF67B /* MedicationDose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B6DE8DFEF2475355269B5 /* MedicationDose.swift */; };
@@ -30,10 +29,8 @@
 		A5297CC6ABD0543D931BAD5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618AB28D259CCC8BECB91112 /* Extensions.swift */; };
 		A898FDCAEB3A9464073D38FD /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED541591E5EFAFECC0A92487 /* AddMedicationView.swift */; };
 		B2728606C783284D33C316B2 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */; };
-		B404A266E6EF93117D9DE69A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */; };
 		BB924D5F625F2DC913402E84 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9A0B10A2B362ACE997034 /* SettingsView.swift */; };
 		BB9C950236ED0C63A495776F /* MedicalAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67989C8522430E0EC4B8F9C2 /* MedicalAppointment.swift */; };
-		C234F0A34255B4F4746D737F /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD49144874922CB748CD59 /* AIChatView.swift */; };
 		C623C7ACD58266D288DF21B8 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB6FEB6AAE333AA37EF8EC /* DashboardView.swift */; };
 		C8D9DDFBC56F38D173F620BD /* GentleCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B28350C2382A729C0979B /* GentleCareApp.swift */; };
 		DA29E1D1593BD7C52AB877D2 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E6B48775FF4942F340C94 /* ColorPalette.swift */; };
@@ -50,11 +47,9 @@
 		1E4B6DE8DFEF2475355269B5 /* MedicationDose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDose.swift; sourceTree = "<group>"; };
 		22E3AE30320AD643FEC45E4C /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		22E73BFA6622E8E5D6A1C0C1 /* MedicationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationListView.swift; sourceTree = "<group>"; };
-		2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
 		3D8B28350C2382A729C0979B /* GentleCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleCareApp.swift; sourceTree = "<group>"; };
 		3F600D276C138A301A2EAB8D /* GlassEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassEffect.swift; sourceTree = "<group>"; };
-		4DCD49144874922CB748CD59 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		4FEAC2DB1952B590D1A0674A /* VitalSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalSign.swift; sourceTree = "<group>"; };
 		520AD98639E10928BD73A647 /* AddAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppointmentView.swift; sourceTree = "<group>"; };
 		5469C303839A69F254DC181A /* GlassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTextField.swift; sourceTree = "<group>"; };
@@ -72,7 +67,6 @@
 		BA5612BA1735D7E2017C58A5 /* AppointmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailView.swift; sourceTree = "<group>"; };
 		BB7FC73F07ED67BB4007BBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFE9A0B10A2B362ACE997034 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		D833276E2A1887EA17A330B3 /* HybridAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridAIService.swift; sourceTree = "<group>"; };
 		DFAB702BDD47EF42639B0983 /* AddVitalReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVitalReadingView.swift; sourceTree = "<group>"; };
 		E61748592D7F2B9A1C75A86E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		ED541591E5EFAFECC0A92487 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
@@ -83,7 +77,6 @@
 		08BA3A5ED78A0B1B9999907C /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				7C326511D51AC042B504BC58 /* AIChat */,
 				134360555F184919E93114F6 /* Appointments */,
 				C33C8708383C5DB085A8B37D /* Dashboard */,
 				7D93E664CF8B073ED49D5EA9 /* Emergency */,
@@ -112,14 +105,6 @@
 				6A3F7A15BB85F9AA72534EB8 /* AppointmentsView.swift */,
 			);
 			path = Appointments;
-			sourceTree = "<group>";
-		};
-		14057EB7DFCA6DA845B7B0CB /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D833276E2A1887EA17A330B3 /* HybridAIService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		1897B20F50F28B27CDB53EBF /* Onboarding */ = {
@@ -231,16 +216,6 @@
 			path = Medication;
 			sourceTree = "<group>";
 		};
-		7C326511D51AC042B504BC58 /* AIChat */ = {
-			isa = PBXGroup;
-			children = (
-				9B051F02C22C647B963E9340 /* Components */,
-				14057EB7DFCA6DA845B7B0CB /* Services */,
-				4DCD49144874922CB748CD59 /* AIChatView.swift */,
-			);
-			path = AIChat;
-			sourceTree = "<group>";
-		};
 		7D93E664CF8B073ED49D5EA9 /* Emergency */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,17 +240,9 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		9B051F02C22C647B963E9340 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		9B06FD91F74090336C1E9F40 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */,
 				890370B60AEB47C921408A93 /* ElderlyProfile.swift */,
 				3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */,
 				67989C8522430E0EC4B8F9C2 /* MedicalAppointment.swift */,
@@ -455,14 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C234F0A34255B4F4746D737F /* AIChatView.swift in Sources */,
 				5CC2D3DA662F58CB686315DB /* AddAppointmentView.swift in Sources */,
 				A898FDCAEB3A9464073D38FD /* AddMedicationView.swift in Sources */,
 				2C2C945B428192ED9DACCC07 /* AddVitalReadingView.swift in Sources */,
 				8B019FC76372803868824FA6 /* AppTabView.swift in Sources */,
 				5B13DF53E6749A3BDF079FB5 /* AppointmentDetailView.swift in Sources */,
 				2CB62136B97AA21D42A3DF87 /* AppointmentsView.swift in Sources */,
-				B404A266E6EF93117D9DE69A /* ChatMessage.swift in Sources */,
 				DA29E1D1593BD7C52AB877D2 /* ColorPalette.swift in Sources */,
 				C623C7ACD58266D288DF21B8 /* DashboardView.swift in Sources */,
 				F724867C11673582DE443947 /* ElderlyProfile.swift in Sources */,
@@ -475,7 +440,6 @@
 				5818A7B9165189EA4F971F98 /* GlassCard.swift in Sources */,
 				3FEAAE6CC34ADEB664034E3D /* GlassEffect.swift in Sources */,
 				0CFFD407D4C2B99C7758DF05 /* GlassTextField.swift in Sources */,
-				3A66FEF62F301D1E5D370DF8 /* HybridAIService.swift in Sources */,
 				BB9C950236ED0C63A495776F /* MedicalAppointment.swift in Sources */,
 				66F6B0C34985C1D3E7E4F08C /* Medication.swift in Sources */,
 				596CEE0501C77E58015EF67B /* MedicationDose.swift in Sources */,

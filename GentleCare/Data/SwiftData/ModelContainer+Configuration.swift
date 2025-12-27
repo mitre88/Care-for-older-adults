@@ -18,7 +18,6 @@ extension ModelContainer {
             MedicationDose.self,
             VitalSign.self,
             MedicalAppointment.self,
-            ChatMessage.self,
             EmergencyContact.self
         ])
 
@@ -44,7 +43,6 @@ extension ModelContainer {
             MedicationDose.self,
             VitalSign.self,
             MedicalAppointment.self,
-            ChatMessage.self,
             EmergencyContact.self
         ])
 

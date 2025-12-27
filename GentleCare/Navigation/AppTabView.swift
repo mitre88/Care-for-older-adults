@@ -22,7 +22,6 @@ struct AppTabView: View {
         case home = "Inicio"
         case medications = "Medicamentos"
         case vitals = "Salud"
-        case chat = "Chat"
         case settings = "Ajustes"
 
         var id: String { rawValue }
@@ -32,7 +31,6 @@ struct AppTabView: View {
             case .home: return "house.fill"
             case .medications: return "pills.fill"
             case .vitals: return "heart.fill"
-            case .chat: return "bubble.left.and.bubble.right.fill"
             case .settings: return "gearshape.fill"
             }
         }
@@ -70,8 +68,6 @@ struct AppTabView: View {
             MedicationListView()
         case .vitals:
             VitalSignsView()
-        case .chat:
-            AIChatView()
         case .settings:
             SettingsView()
         }
@@ -91,7 +87,6 @@ enum NavigationDestination: Hashable {
     case emergency
     case emergencyContacts
     case profileEdit
-    case aiSettings
     case notificationSettings
     case aboutApp
 }

@@ -36,7 +36,6 @@ final class ElderlyProfile {
     var textSizeMultiplier: Double
     var enableVoiceFeedback: Bool
     var enableHapticFeedback: Bool
-    var preferredAIMode: AIMode
     var preferredLanguage: String
 
     // MARK: - Relationships
@@ -49,9 +48,6 @@ final class ElderlyProfile {
 
     @Relationship(deleteRule: .cascade, inverse: \MedicalAppointment.profile)
     var appointments: [MedicalAppointment] = []
-
-    @Relationship(deleteRule: .cascade, inverse: \ChatMessage.profile)
-    var chatMessages: [ChatMessage] = []
 
     @Relationship(deleteRule: .cascade, inverse: \EmergencyContact.profile)
     var emergencyContacts: [EmergencyContact] = []
@@ -107,7 +103,6 @@ final class ElderlyProfile {
         self.textSizeMultiplier = 1.2
         self.enableVoiceFeedback = true
         self.enableHapticFeedback = true
-        self.preferredAIMode = .hybrid
         self.preferredLanguage = "es"
         self.createdAt = Date()
         self.updatedAt = Date()
@@ -135,33 +130,4 @@ enum BloodType: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
 
     var displayName: String { rawValue }
-}
-
-// MARK: - AI Mode
-
-enum AIMode: String, Codable, CaseIterable, Identifiable {
-    case onDevice = "on_device"
-    case cloud = "cloud"
-    case hybrid = "hybrid"
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .onDevice: return "Solo en dispositivo"
-        case .cloud: return "Solo en la nube"
-        case .hybrid: return "Hibrido (Recomendado)"
-        }
-    }
-
-    var description: String {
-        switch self {
-        case .onDevice:
-            return "Procesa todo localmente. Mas privado, funciona sin internet."
-        case .cloud:
-            return "Usa OpenAI para respuestas mas avanzadas. Requiere internet."
-        case .hybrid:
-            return "Combina ambos: privacidad local + potencia de la nube."
-        }
-    }
 }

@@ -49,15 +49,6 @@ struct SettingsView: View {
                         }
 
                         SettingsRow(
-                            icon: "brain.head.profile",
-                            title: "Asistente IA",
-                            subtitle: profile?.preferredAIMode.displayName,
-                            color: Color(hex: "AF52DE")
-                        ) {
-                            // AI settings
-                        }
-
-                        SettingsRow(
                             icon: "textformat.size",
                             title: "Accesibilidad",
                             color: Color(hex: "5AC8FA")
