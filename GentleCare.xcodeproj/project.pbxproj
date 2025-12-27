@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02DABEA5F27F6903FED9DD97 /* GlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3AA5F428FD762AB58EB28 /* GlassButton.swift */; };
+		0CFFD407D4C2B99C7758DF05 /* GlassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469C303839A69F254DC181A /* GlassTextField.swift */; };
+		1CE1CBE3FFFE0156E8ACED03 /* ModelContainer+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749EB719415E93576CBFEA5 /* ModelContainer+Configuration.swift */; };
+		2C2C945B428192ED9DACCC07 /* AddVitalReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB702BDD47EF42639B0983 /* AddVitalReadingView.swift */; };
+		2CB62136B97AA21D42A3DF87 /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7A15BB85F9AA72534EB8 /* AppointmentsView.swift */; };
+		2F6E923CCE1735E594B5C76D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7FC73F07ED67BB4007BBE9 /* Assets.xcassets */; };
+		3000CB96A75F3DFD520B90DA /* EmergencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095E70D2EC06ECE274DF9769 /* EmergencyView.swift */; };
+		347E3E2C8F4F7E3174855AF2 /* VitalSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEAC2DB1952B590D1A0674A /* VitalSign.swift */; };
+		3A66FEF62F301D1E5D370DF8 /* HybridAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833276E2A1887EA17A330B3 /* HybridAIService.swift */; };
+		3FEAAE6CC34ADEB664034E3D /* GlassEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F600D276C138A301A2EAB8D /* GlassEffect.swift */; };
+		5818A7B9165189EA4F971F98 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F5071AEC1456C886EA8C2 /* GlassCard.swift */; };
+		596CEE0501C77E58015EF67B /* MedicationDose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B6DE8DFEF2475355269B5 /* MedicationDose.swift */; };
+		5B13DF53E6749A3BDF079FB5 /* AppointmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5612BA1735D7E2017C58A5 /* AppointmentDetailView.swift */; };
+		5CC2D3DA662F58CB686315DB /* AddAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520AD98639E10928BD73A647 /* AddAppointmentView.swift */; };
+		6075886E4D45C3819EB19869 /* GentleCareTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06ACD1777F848433628F86F /* GentleCareTheme.swift */; };
+		66F6B0C34985C1D3E7E4F08C /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A48DDB464D2699109C965 /* Medication.swift */; };
+		6D4DC3408D34000631263150 /* VitalSignsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1330C84F1EE758E27A335789 /* VitalSignsView.swift */; };
+		8B019FC76372803868824FA6 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D17C56437DD5B1561A2A0 /* AppTabView.swift */; };
+		8E4B4687C45EA46879EDD619 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E3AE30320AD643FEC45E4C /* Typography.swift */; };
+		909E090BB6D6F89A2C7FE5D0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F4B015515D07F398E277 /* NotificationManager.swift */; };
+		A5297CC6ABD0543D931BAD5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618AB28D259CCC8BECB91112 /* Extensions.swift */; };
+		A898FDCAEB3A9464073D38FD /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED541591E5EFAFECC0A92487 /* AddMedicationView.swift */; };
+		B2728606C783284D33C316B2 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */; };
+		B404A266E6EF93117D9DE69A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */; };
+		BB924D5F625F2DC913402E84 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9A0B10A2B362ACE997034 /* SettingsView.swift */; };
+		BB9C950236ED0C63A495776F /* MedicalAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67989C8522430E0EC4B8F9C2 /* MedicalAppointment.swift */; };
+		C234F0A34255B4F4746D737F /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD49144874922CB748CD59 /* AIChatView.swift */; };
+		C623C7ACD58266D288DF21B8 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB6FEB6AAE333AA37EF8EC /* DashboardView.swift */; };
+		C8D9DDFBC56F38D173F620BD /* GentleCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B28350C2382A729C0979B /* GentleCareApp.swift */; };
+		DA29E1D1593BD7C52AB877D2 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E6B48775FF4942F340C94 /* ColorPalette.swift */; };
+		DB52B674AF74DB778CEDF644 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61748592D7F2B9A1C75A86E /* OnboardingView.swift */; };
+		F486E295F4D6CD2FB66C674A /* MedicationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E73BFA6622E8E5D6A1C0C1 /* MedicationListView.swift */; };
+		F724867C11673582DE443947 /* ElderlyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890370B60AEB47C921408A93 /* ElderlyProfile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		095E70D2EC06ECE274DF9769 /* EmergencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyView.swift; sourceTree = "<group>"; };
+		1330C84F1EE758E27A335789 /* VitalSignsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalSignsView.swift; sourceTree = "<group>"; };
+		1A2F5071AEC1456C886EA8C2 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		1DF3AA5F428FD762AB58EB28 /* GlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButton.swift; sourceTree = "<group>"; };
+		1E4B6DE8DFEF2475355269B5 /* MedicationDose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDose.swift; sourceTree = "<group>"; };
+		22E3AE30320AD643FEC45E4C /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		22E73BFA6622E8E5D6A1C0C1 /* MedicationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationListView.swift; sourceTree = "<group>"; };
+		2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
+		3D8B28350C2382A729C0979B /* GentleCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleCareApp.swift; sourceTree = "<group>"; };
+		3F600D276C138A301A2EAB8D /* GlassEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassEffect.swift; sourceTree = "<group>"; };
+		4DCD49144874922CB748CD59 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
+		4FEAC2DB1952B590D1A0674A /* VitalSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalSign.swift; sourceTree = "<group>"; };
+		520AD98639E10928BD73A647 /* AddAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppointmentView.swift; sourceTree = "<group>"; };
+		5469C303839A69F254DC181A /* GlassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTextField.swift; sourceTree = "<group>"; };
+		581E6B48775FF4942F340C94 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		618AB28D259CCC8BECB91112 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		633D17C56437DD5B1561A2A0 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		639E0A131D5C1E8F0B6D9099 /* GentleCare.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GentleCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67989C8522430E0EC4B8F9C2 /* MedicalAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalAppointment.swift; sourceTree = "<group>"; };
+		6A3F7A15BB85F9AA72534EB8 /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
+		8496F4B015515D07F398E277 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		890370B60AEB47C921408A93 /* ElderlyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElderlyProfile.swift; sourceTree = "<group>"; };
+		A749EB719415E93576CBFEA5 /* ModelContainer+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Configuration.swift"; sourceTree = "<group>"; };
+		ABDB6FEB6AAE333AA37EF8EC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B79A48DDB464D2699109C965 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		BA5612BA1735D7E2017C58A5 /* AppointmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailView.swift; sourceTree = "<group>"; };
+		BB7FC73F07ED67BB4007BBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFE9A0B10A2B362ACE997034 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D833276E2A1887EA17A330B3 /* HybridAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridAIService.swift; sourceTree = "<group>"; };
+		DFAB702BDD47EF42639B0983 /* AddVitalReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVitalReadingView.swift; sourceTree = "<group>"; };
+		E61748592D7F2B9A1C75A86E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		ED541591E5EFAFECC0A92487 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
+		F06ACD1777F848433628F86F /* GentleCareTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleCareTheme.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08BA3A5ED78A0B1B9999907C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7C326511D51AC042B504BC58 /* AIChat */,
+				134360555F184919E93114F6 /* Appointments */,
+				C33C8708383C5DB085A8B37D /* Dashboard */,
+				7D93E664CF8B073ED49D5EA9 /* Emergency */,
+				7459619F74FD0B7D62E412FF /* Medication */,
+				1897B20F50F28B27CDB53EBF /* Onboarding */,
+				96266AFAC37DF767CB13DE38 /* Settings */,
+				C70DB64342EC845936CC99C6 /* VitalSigns */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0A5AA86767BCEE841B1CE7AB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				618AB28D259CCC8BECB91112 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		134360555F184919E93114F6 /* Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				CA047CD63CB767A3371FB2C4 /* Components */,
+				520AD98639E10928BD73A647 /* AddAppointmentView.swift */,
+				BA5612BA1735D7E2017C58A5 /* AppointmentDetailView.swift */,
+				6A3F7A15BB85F9AA72534EB8 /* AppointmentsView.swift */,
+			);
+			path = Appointments;
+			sourceTree = "<group>";
+		};
+		14057EB7DFCA6DA845B7B0CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D833276E2A1887EA17A330B3 /* HybridAIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1897B20F50F28B27CDB53EBF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E61748592D7F2B9A1C75A86E /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		21C62DA6F69B9BEB22B3950F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4D27B5170BB6A2F9F679DF4 /* SwiftData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2B04BE4A2C087DFE258633AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3086601E2C4F33894DA0E88D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3EC4BB79734271871139DBD4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6865E4C54327FBC4B33E41DA /* Design */,
+				0A5AA86767BCEE841B1CE7AB /* Extensions */,
+				CB47C1C38157367B0C8919B5 /* Protocols */,
+				B3186DFB74F2E46E6FE7ED90 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4E639E26C501664E79C0374B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5D4AFEF02F31C45A77F0F9BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1DF3AA5F428FD762AB58EB28 /* GlassButton.swift */,
+				1A2F5071AEC1456C886EA8C2 /* GlassCard.swift */,
+				5469C303839A69F254DC181A /* GlassTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5F6ECE4C980592BA427EA7EC /* GentleCare */ = {
+			isa = PBXGroup;
+			children = (
+				F9DAEC2CC69655FA0DD30698 /* App */,
+				3EC4BB79734271871139DBD4 /* Core */,
+				21C62DA6F69B9BEB22B3950F /* Data */,
+				08BA3A5ED78A0B1B9999907C /* Features */,
+				95C5A611496AE4F0E5A4E428 /* Navigation */,
+				BD0AC52A3E0B6CB87140EC10 /* Resources */,
+			);
+			path = GentleCare;
+			sourceTree = "<group>";
+		};
+		62DB55E8579CED8439476469 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				581E6B48775FF4942F340C94 /* ColorPalette.swift */,
+				F06ACD1777F848433628F86F /* GentleCareTheme.swift */,
+				22E3AE30320AD643FEC45E4C /* Typography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		6865E4C54327FBC4B33E41DA /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				5D4AFEF02F31C45A77F0F9BB /* Components */,
+				FEC900523CF6222812225A50 /* Modifiers */,
+				62DB55E8579CED8439476469 /* Theme */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		695D49E09EBCEA0585F9B137 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7459619F74FD0B7D62E412FF /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				2B04BE4A2C087DFE258633AA /* Components */,
+				4E639E26C501664E79C0374B /* Services */,
+				ED541591E5EFAFECC0A92487 /* AddMedicationView.swift */,
+				22E73BFA6622E8E5D6A1C0C1 /* MedicationListView.swift */,
+			);
+			path = Medication;
+			sourceTree = "<group>";
+		};
+		7C326511D51AC042B504BC58 /* AIChat */ = {
+			isa = PBXGroup;
+			children = (
+				9B051F02C22C647B963E9340 /* Components */,
+				14057EB7DFCA6DA845B7B0CB /* Services */,
+				4DCD49144874922CB748CD59 /* AIChatView.swift */,
+			);
+			path = AIChat;
+			sourceTree = "<group>";
+		};
+		7D93E664CF8B073ED49D5EA9 /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				095E70D2EC06ECE274DF9769 /* EmergencyView.swift */,
+			);
+			path = Emergency;
+			sourceTree = "<group>";
+		};
+		95C5A611496AE4F0E5A4E428 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				633D17C56437DD5B1561A2A0 /* AppTabView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		96266AFAC37DF767CB13DE38 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CFE9A0B10A2B362ACE997034 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9B051F02C22C647B963E9340 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9B06FD91F74090336C1E9F40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DFB4E688A76E6869D12CCB3 /* ChatMessage.swift */,
+				890370B60AEB47C921408A93 /* ElderlyProfile.swift */,
+				3B0513D13D734B1752C0FDA6 /* EmergencyContact.swift */,
+				67989C8522430E0EC4B8F9C2 /* MedicalAppointment.swift */,
+				B79A48DDB464D2699109C965 /* Medication.swift */,
+				1E4B6DE8DFEF2475355269B5 /* MedicationDose.swift */,
+				4FEAC2DB1952B590D1A0674A /* VitalSign.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B3186DFB74F2E46E6FE7ED90 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8496F4B015515D07F398E277 /* NotificationManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BD0AC52A3E0B6CB87140EC10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB7FC73F07ED67BB4007BBE9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C33C8708383C5DB085A8B37D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3086601E2C4F33894DA0E88D /* Components */,
+				ABDB6FEB6AAE333AA37EF8EC /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		C70DB64342EC845936CC99C6 /* VitalSigns */ = {
+			isa = PBXGroup;
+			children = (
+				E10EFCDB46D31BC67AA1AA00 /* Components */,
+				695D49E09EBCEA0585F9B137 /* Services */,
+				DFAB702BDD47EF42639B0983 /* AddVitalReadingView.swift */,
+				1330C84F1EE758E27A335789 /* VitalSignsView.swift */,
+			);
+			path = VitalSigns;
+			sourceTree = "<group>";
+		};
+		CA047CD63CB767A3371FB2C4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CB47C1C38157367B0C8919B5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D4D27B5170BB6A2F9F679DF4 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				9B06FD91F74090336C1E9F40 /* Models */,
+				A749EB719415E93576CBFEA5 /* ModelContainer+Configuration.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		DF6B43B136456E75A39C8B64 = {
+			isa = PBXGroup;
+			children = (
+				5F6ECE4C980592BA427EA7EC /* GentleCare */,
+				F79F341C31B9F92F1196BA78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E10EFCDB46D31BC67AA1AA00 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F79F341C31B9F92F1196BA78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639E0A131D5C1E8F0B6D9099 /* GentleCare.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9DAEC2CC69655FA0DD30698 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B28350C2382A729C0979B /* GentleCareApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FEC900523CF6222812225A50 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3F600D276C138A301A2EAB8D /* GlassEffect.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E3E869A6A3D01EA139F4635 /* GentleCare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4914DF75FFA19C78567C6227 /* Build configuration list for PBXNativeTarget "GentleCare" */;
+			buildPhases = (
+				739E2BB6F8F9D0C36A460567 /* Sources */,
+				4AE990FD54CA5E5B7B9D60A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GentleCare;
+			packageProductDependencies = (
+			);
+			productName = GentleCare;
+			productReference = 639E0A131D5C1E8F0B6D9099 /* GentleCare.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B8F5B4354264074E5365073 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					2E3E869A6A3D01EA139F4635 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 56EC1EE8F9ABB9F222D2B499 /* Build configuration list for PBXProject "GentleCare" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = es;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				es,
+			);
+			mainGroup = DF6B43B136456E75A39C8B64;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E3E869A6A3D01EA139F4635 /* GentleCare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AE990FD54CA5E5B7B9D60A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F6E923CCE1735E594B5C76D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		739E2BB6F8F9D0C36A460567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C234F0A34255B4F4746D737F /* AIChatView.swift in Sources */,
+				5CC2D3DA662F58CB686315DB /* AddAppointmentView.swift in Sources */,
+				A898FDCAEB3A9464073D38FD /* AddMedicationView.swift in Sources */,
+				2C2C945B428192ED9DACCC07 /* AddVitalReadingView.swift in Sources */,
+				8B019FC76372803868824FA6 /* AppTabView.swift in Sources */,
+				5B13DF53E6749A3BDF079FB5 /* AppointmentDetailView.swift in Sources */,
+				2CB62136B97AA21D42A3DF87 /* AppointmentsView.swift in Sources */,
+				B404A266E6EF93117D9DE69A /* ChatMessage.swift in Sources */,
+				DA29E1D1593BD7C52AB877D2 /* ColorPalette.swift in Sources */,
+				C623C7ACD58266D288DF21B8 /* DashboardView.swift in Sources */,
+				F724867C11673582DE443947 /* ElderlyProfile.swift in Sources */,
+				B2728606C783284D33C316B2 /* EmergencyContact.swift in Sources */,
+				3000CB96A75F3DFD520B90DA /* EmergencyView.swift in Sources */,
+				A5297CC6ABD0543D931BAD5D /* Extensions.swift in Sources */,
+				C8D9DDFBC56F38D173F620BD /* GentleCareApp.swift in Sources */,
+				6075886E4D45C3819EB19869 /* GentleCareTheme.swift in Sources */,
+				02DABEA5F27F6903FED9DD97 /* GlassButton.swift in Sources */,
+				5818A7B9165189EA4F971F98 /* GlassCard.swift in Sources */,
+				3FEAAE6CC34ADEB664034E3D /* GlassEffect.swift in Sources */,
+				0CFFD407D4C2B99C7758DF05 /* GlassTextField.swift in Sources */,
+				3A66FEF62F301D1E5D370DF8 /* HybridAIService.swift in Sources */,
+				BB9C950236ED0C63A495776F /* MedicalAppointment.swift in Sources */,
+				66F6B0C34985C1D3E7E4F08C /* Medication.swift in Sources */,
+				596CEE0501C77E58015EF67B /* MedicationDose.swift in Sources */,
+				F486E295F4D6CD2FB66C674A /* MedicationListView.swift in Sources */,
+				1CE1CBE3FFFE0156E8ACED03 /* ModelContainer+Configuration.swift in Sources */,
+				909E090BB6D6F89A2C7FE5D0 /* NotificationManager.swift in Sources */,
+				DB52B674AF74DB778CEDF644 /* OnboardingView.swift in Sources */,
+				BB924D5F625F2DC913402E84 /* SettingsView.swift in Sources */,
+				8E4B4687C45EA46879EDD619 /* Typography.swift in Sources */,
+				347E3E2C8F4F7E3174855AF2 /* VitalSign.swift in Sources */,
+				6D4DC3408D34000631263150 /* VitalSignsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		055413E5EDB179B4B81131C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1AE81494F608C4A7E881B98A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GentleCare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gentlecare.app;
+				PRODUCT_NAME = GentleCare;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36036B0A43868221CCB1E4F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		631EF6F64BF107C6FB1757C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GentleCare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gentlecare.app;
+				PRODUCT_NAME = GentleCare;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4914DF75FFA19C78567C6227 /* Build configuration list for PBXNativeTarget "GentleCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AE81494F608C4A7E881B98A /* Debug */,
+				631EF6F64BF107C6FB1757C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		56EC1EE8F9ABB9F222D2B499 /* Build configuration list for PBXProject "GentleCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36036B0A43868221CCB1E4F6 /* Debug */,
+				055413E5EDB179B4B81131C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B8F5B4354264074E5365073 /* Project object */;
+}
