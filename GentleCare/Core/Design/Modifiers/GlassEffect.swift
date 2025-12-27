@@ -38,12 +38,10 @@ struct GlassEffectModifier: ViewModifier {
         case .regular:
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(.ultraThinMaterial)
-                .glassEffect()
 
         case .clear:
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(.ultraThinMaterial.opacity(0.5))
-                .glassEffect()
 
         case .subtle:
             RoundedRectangle(cornerRadius: cornerRadius)
@@ -53,7 +51,6 @@ struct GlassEffectModifier: ViewModifier {
         case .prominent:
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(.regularMaterial)
-                .glassEffect()
         }
     }
 
